@@ -2,7 +2,7 @@
 
 window.addEventListener("DOMContentLoaded",
     function(){
-        let popMsg = "<<<<<<<<<<<<仕事　タイム！>>>>>>>>>>>";
+        let popMsg = "<<<<<<<<やりますねー！要来力（悲）>>>>>>>";
         window.alert(popMsg);
         $("header").textillate({
             loop: false, // ループのオンオフ
