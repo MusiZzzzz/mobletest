@@ -68,9 +68,9 @@ window.addEventListener("DOMContentLoaded",
                     break;
               }*/
               omikujiText.style.transition ="1s";
-              let resultText = ["大吉","吉","中吉","小吉","凶"];
+              let resultText = ["哼..哼..啊啊啊啊啊啊","哼..啊啊啊.哼..哼","哼哼..哼啊啊啊啊","哼..哼啊啊","哼.."];
               let resultColor =["#b0e0e6","#ff00ff","#ff0000","#00008b","#000000"];
-              let resultFontSize =["55px","45px","40px","35px","30px",];
+              let resultFontSize =["90px","80px","70px","60px","50px","40px"];
               let n = Math.floor(Math.random() * resultText.length);
               omikujiText.textContent = resultText[n];
               omikujiText.style.color = resultColor[n];

@@ -90,6 +90,39 @@ body{
         background-size: auto 700px;
     }
 }
+.niceButton2{
+    position: relative;
+    background-color: rgb(25, 243, 243);
+    border-radius: 20px;
+    font-size: 28px;
+    color: #ffffff;
+    padding: 20px;
+    width: 150px;
+    text-align: center;
+    transition-duration: 0.6s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+}
+.niceButton2::after{
+    content: '';
+    background:#1c6d70;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition:all 0.8s;
+}
+.niceButton2:active::after{
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s;
+}
+
 p{
     margin: 0;
     padding: 0;
