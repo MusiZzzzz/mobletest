@@ -72,8 +72,8 @@ window.addEventListener("DOMContentLoaded",
               omikujiText.style.transition ="1s";
               let resultText = ["哼..哼..啊啊啊啊啊啊","哼..啊啊啊.哼..哼","哼哼..哼啊啊啊啊","哼..哼啊啊","哼.."];
               let resultColor =["#b0e0e6","#ff00ff","#ff0000","#00008b","#000000"];
-              let resultFontSize =["90px","80px","70px","60px","50px","40px"];
-              let resultSound = ["sound/mus3.mp3","sound/mus1.mp2","sound/mus2.mp2","sound/mus2.mp2","sound/mus1.mp","sound/mus1.mp3",]
+              let resultFontSize =["90px","80px","70px","60px","50px"];
+              let resultSound = ["sound/mus3.mp3","sound/mus1.mp3","sound/mus2.mp3","sound/mus1.mp3","sound/mus1.mp3",]
               let n = Math.floor(Math.random() * resultText.length);
               omikujiText.textContent = resultText[n];
               omikujiText.style.color = resultColor[n];
@@ -98,12 +98,9 @@ window.addEventListener("DOMContentLoaded",
     let w_sound
     let music
     function soundControl(status,w_sound){
-        if(status ==="start"){
+        if  (status ==="start"){
             music = new Audio(w_sound);
             music.currentTime = 0;
             music.play();
-        }else if(status === "end"){
-            music.pause();
-            music.currentTime = 0;
         }
     }
