@@ -1,5 +1,6 @@
 "use strict";
-
+let nBefore = null;
+let n = 0;
 window.addEventListener("DOMContentLoaded",
     function(){
         $("header").textillate({
@@ -70,15 +71,20 @@ window.addEventListener("DOMContentLoaded",
                     btn1.style.fontSize = "15px";
                     break;
               }*/
+
               // omikujiText.style.transition ="1s";
               let resultText = ["img/daikichi.png","img/chukichi.png","img/syokichi.png","img/suekichi.png","img/daikyo.png"];
               //let resultColor =["#b0e0e6","#ff00ff","#ff0000","#00008b","#000000"];
               //let resultFontSize =["90px","80px","70px","60px","50px",];
               let resultMaxSpeed = [10,10,8,5,5];
               let resultMaxSize = [30,30,30,40,30];
-              let resultSound = ["sound/mus3.mp3","sound/mus2.mp2","sound/mus2.mp2","sound/mus1.mp","sound/mus1.mp3",]
-              
-              let n = Math.floor(Math.random() * resultText.length);
+              let resultSound = ["sound/mus3.mp3","sound/mus2.mp3","sound/mus2.mp3","sound/mus1.mp3","sound/mus1.mp3",]
+              while(n==nBefore){
+                n = Math.floor(Math.random() * resultText.length);
+                }
+                nBefore = n;
+
+
 
               omikujiTextImage.src = resultText[n];
               omikujiTextImage.classList.add("omikujiPaper");
