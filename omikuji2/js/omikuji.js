@@ -122,8 +122,5 @@ window.addEventListener("DOMContentLoaded",
             music = new Audio(w_sound);
             music.currentTime = 0;
             music.play();
-        }else if(status === "end"){
-            music.pause();
-            music.currentTime = 0;
         }
     }
