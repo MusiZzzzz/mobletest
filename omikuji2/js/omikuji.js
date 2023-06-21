@@ -35,6 +35,7 @@ window.addEventListener("DOMContentLoaded",
     let soundEndfalg = "0";
     const btn1 = document.getElementById("btn1");
     const omikujiText = document.getElementById("omikujiText");
+    const omikujiTextImage = document.getElementById("omikujiTextImage");
     btn1.addEventListener("click",
     function(){
         if(soundEndfalg === "1"){
@@ -69,15 +70,28 @@ window.addEventListener("DOMContentLoaded",
                     btn1.style.fontSize = "15px";
                     break;
               }*/
-              omikujiText.style.transition ="1s";
-              let resultText = ["哼..哼..啊啊啊啊啊啊","哼..啊啊啊.哼..哼","哼哼..哼啊啊啊啊","哼..哼啊啊","哼.."];
-              let resultColor =["#b0e0e6","#ff00ff","#ff0000","#00008b","#000000"];
-              let resultFontSize =["90px","80px","70px","60px","50px"];
-              let resultSound = ["sound/mus3.mp3","sound/mus1.mp3","sound/mus2.mp3","sound/mus1.mp3","sound/mus1.mp3",]
+              // omikujiText.style.transition ="1s";
+              let resultText = ["img/daikichi.png","img/chukichi.png","img/syokichi.png","img/suekichi.png","img/daikyo.png"];
+              //let resultColor =["#b0e0e6","#ff00ff","#ff0000","#00008b","#000000"];
+              //let resultFontSize =["90px","80px","70px","60px","50px",];
+              let resultMaxSpeed = [10,10,8,5,5];
+              let resultMaxSize = [30,30,30,40,30];
+              let resultSound = ["sound/mus3.mp3","sound/mus2.mp2","sound/mus2.mp2","sound/mus1.mp","sound/mus1.mp3",]
+              
               let n = Math.floor(Math.random() * resultText.length);
-              omikujiText.textContent = resultText[n];
-              omikujiText.style.color = resultColor[n];
-              omikujiText.style.fontSize = resultFontSize[n];
+
+              omikujiTextImage.src = resultText[n];
+              omikujiTextImage.classList.add("omikujiPaper");
+              omikujiTextImage.addEventListener("animationend",
+                function(){
+              omikujiTextImage.classList.remove("omikujiPaper");
+              },false
+              );   
+
+              /*omikujiText.textContent = resultText[n];
+              omikujiText.style.maxspeed = resultMaxSpeed[n];
+              omikujiText.style.maxsize = resultMaxSize[n];*/
+
               w_sound = resultSound[n];
               soundControl("start",w_sound);
               soundEndfalg = "1";
@@ -98,9 +112,12 @@ window.addEventListener("DOMContentLoaded",
     let w_sound
     let music
     function soundControl(status,w_sound){
-        if  (status ==="start"){
+        if(status ==="start"){
             music = new Audio(w_sound);
             music.currentTime = 0;
             music.play();
+        }else if(status === "end"){
+            music.pause();
+            music.currentTime = 0;
         }
     }
